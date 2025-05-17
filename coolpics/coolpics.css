@@ -1,3 +1,4 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Mooli&display=swap");
 
 :root {
@@ -10,103 +11,166 @@
   --secondary-font: Mooli, sans-serif;
 }
 
-
+/* === starting styles === */
 body {
-    font-family: var(--primary-font);
-    font-size: 1.2em;
-    color: var(--text-dark);
-    background-color: white;
-    margin: 0;
-    padding: 0;
-  }
-  
-  h1, h2 {
-    font-family: var(--secondary-font);
-  }
-  
-  a:link,
-  a:visited {
-    color: var(--accent-color);
-  }
+  font-family: var(--primary-font);
+  font-size: 1.2em;
+  color: var(--text-dark);
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
 
+h1, h2 {
+  font-family: var(--secondary-font);
+}
 
+a:link,
+a:visited {
+  color: var(--accent-color);
+}
 
+img {
+  max-width: 100%;
+}
 
+/* === header and footer === */
+header {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  padding: 1rem;
+}
 
+header h1 {
+  text-align: center;
+}
 
-  header {
-    background-color: var(--primary-color);
-    color: var(--text-light);
-    padding: 1rem;
-  }
+footer {
+  background-color: var(--secondary-color);
+  color: var(--text-light);
+  text-align: left;
+  padding: 1rem;
+}
 
-  header h1 {
-    text-align: center;
-  }
-  
-  
-  footer {
-    background-color: var(--secondary-color);
-    color: var(--text-light);
-    text-align: left;
-    padding: 1rem;
-  }
-  
+/* === gallery === */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
 
+.gallery img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
 
-
-  nav button {
-    background: none;
-    border: none;
-    color: var(--text-light);
-    font-size: 1em;
-    cursor: pointer;
-    text-align: center;
-  }
-  
-
-
-  main h2 {
-    text-align: center;
-  }
-  
-
+@media (min-width: 700px) {
   .gallery {
-    display: grid;
-    grid-template-columns: 1fr; /* start with 1 column on small screens */
-    gap: 1rem;
-    padding: 1rem;
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .gallery img {
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
+}
+
+@media (min-width: 1000px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* === Nav === */
+
+/* Default nav styles for large screens */
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Menu button */
+.menu-button {
+  display: none;
+  margin: 0 auto;
+  color: white;
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Small screen styles */
+@media (max-width: 999px) {
+  .menu-button {
     display: block;
-    margin: 0 auto;
-  }  
-
-
-  img {
-    max-width: 100%;
-  }
-  
-
-
-
-  @media (min-width: 700px) {
-    .gallery {
-      grid-template-columns: repeat(2, 1fr);
-    }
   }
 
-  @media (min-width: 1000px) {
-    .gallery {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  
-    nav button {
-      display: none;
-    }
+  .menu {
+    display: none;
+    flex-direction: row;       
+    justify-content: center;   
+    gap: 1rem;
+    margin-top: 0.5rem;
   }
-  
+
+  .menu.show {
+    display: flex;
+  }
+}
+
+
+/* === Modal section === */
+dialog#modal {
+  all: unset;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  z-index: 10;
+  align-items: center;
+  justify-content: center;
+}
+
+dialog[open]#modal {
+  display: flex;
+}
+
+dialog#modal img {
+  max-width: 80vw;
+  max-height: 80vh;
+  background: white;
+  padding: 0.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.close-viewer {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  font-size: 1.5rem;
+  background: white;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+main h2 {
+  text-align: center;
+}
+
+/* === This adds underline === */
+.menu a:hover {
+  text-decoration: underline;
+}
