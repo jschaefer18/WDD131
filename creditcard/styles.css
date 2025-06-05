@@ -1,0 +1,139 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 40px 0;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.form {
+  display: grid;
+  grid-template-areas:
+    "cards cards"
+    "button button";
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.card-front,
+.card-back {
+  width: 350px;
+  height: 220px;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: #e0e0e0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.card-front {
+  grid-area: cards;
+  z-index: 2;
+  transform: translate(-20px, 0);
+}
+
+.card-back {
+  grid-area: cards;
+  z-index: 1;
+  background-color: #ddd;
+  transform: translate(100px, 40px);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+}
+
+.card-back .stripe {
+  grid-column: 1 / -1;
+  background-color: #333;
+  height: 30px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.card-back .cvc-container {
+  grid-column: 2;
+  justify-self: end;
+  align-self: end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.card-back .cvc-container label {
+  font-weight: bold;
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.card-back .cvc-container input {
+  width: 60px;
+}
+
+.card-front .total {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-front .card-logo {
+  height: 30px;
+}
+
+.card-front .card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.holder,
+.expiry {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.expiry-fields {
+  display: flex;
+  gap: 0.25rem;
+}
+
+input {
+  padding: 0.5rem;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.submit-btn {
+  grid-area: button;
+  width: 100px;
+  padding: 0.5rem;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1px solid #888;
+  background: white;
+  cursor: pointer;
+  justify-self: end;
+  margin-right: 80px;
+  margin-top: 100px;
+}
+
+.card-logo {
+  display: inline-block;
+}
