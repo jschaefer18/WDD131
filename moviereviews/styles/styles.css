@@ -329,3 +329,146 @@ footer {
     font-size: 1.3rem;
   }
 }
+
+
+/* Center title */
+h1 {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Style the sort dropdown section */
+.sort-controls {
+  text-align: center;
+  margin: 1rem 0 2rem 0;
+  font-size: 1.1rem;
+}
+
+.sort-controls label {
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.sort-controls select {
+  padding: 0.4rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: border-color 0.2s ease;
+}
+
+.sort-controls select:focus {
+  border-color: #ff3c3c;
+  outline: none;
+}
+
+
+.tags {
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag {
+  background-color: #f0f0f0;
+  color: #333;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+
+
+
+.tag-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem auto;
+  max-width: 900px;
+  text-align: center;
+}
+
+.tag-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.tag-filters label {
+  background-color: #f0f0f0;
+  border-radius: 15px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.tag-filters label:hover {
+  background-color: #e0e0e0;
+}
+
+.tag-filters input[type="checkbox"] {
+  accent-color: crimson;
+}
+
+.tag-filters label {
+  vertical-align: middle;
+  line-height: 1.2;
+}
+
+.tag-filters input[type="checkbox"]:checked + span {
+  background-color: crimson;
+  color: white;
+  border-color: crimson;
+}
+
+.clear-button {
+  background: transparent;
+  border: 1px solid #aaa;
+  border-radius: 20px;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-left: 1rem;
+}
+
+.clear-button:hover {
+  background: #eee;
+}
+
+
+.clear-button-wrapper {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.clear-button {
+  background: transparent;
+  border: 1px solid #aaa;
+  border-radius: 20px;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.clear-button:hover {
+  background-color: #eee;
+}
+
+#tag-options-label {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}

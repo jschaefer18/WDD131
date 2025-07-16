@@ -9,9 +9,47 @@
   <link rel="stylesheet" href="./styles/styles.css" />
 </head>
 <body>
+  <!-- Header -->
+<header class="site-header">
+  <div class="header-container">
+    <div class="logo-title">
+      <img src="images/logo.png" alt="Clapperboard Logo" class="logo">
+      <div class="site-name">
+        <h1>FlickPick</h1>
+        <h2>Quick Takes. Real Opinions.</h2>
+      </div>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-  <h1>Movie Reviews</h1>
+ <h1>Movie Reviews</h1>
 
+<div class="tag-filter-bar">
+  <p id="tag-options-label">Filter by Tags:</p>
+  <div id="tag-options" class="tag-filters"></div>
+</div>
+<div class="clear-button-wrapper">
+  <button id="clear-tags" class="clear-button">Clear Filters</button>
+</div>
+
+
+
+ 
+  
+  <section class="sort-controls" style="text-align: center; margin-bottom: 1rem;">
+  <label for="sort-select">Sort by:</label>
+  <select id="sort-select">
+    <option value="default">Default</option>
+    <option value="rating-high">Rating (High to Low)</option>
+    <option value="rating-low">Rating (Low to High)</option>
+  </select>
+</section>
   <!-- JS will fill this div with the 15 movie cards -->
   <div id="reviews"></div>
 
