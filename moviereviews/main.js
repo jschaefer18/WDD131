@@ -1,5 +1,7 @@
 import { movies } from './movies.js';
 
+const reviewsContainer = document.getElementById('reviews');
+
 function ratingTemplate(rating) {
   let html = `<div class="stars" role="img" aria-label="Rating: ${rating} out of 5 stars">`;
   for (let i = 1; i <= 5; i++) {
@@ -25,17 +27,31 @@ function movieCardTemplate(movie) {
           <p class="featured-label">${movie.title}</p>
           ${ratingTemplate(movie.rating)}
           <p class="review-text">“${movie.description}” <span class="reviewer">– ${movie.author}</span></p>
+          <button class="read-more-btn small-btn">Read More</button>
+          <p class="full-description hidden">${movie.fullDescription || ''}</p>
         </div>
       </div>
     </section>
   `;
 }
 
+
 function renderMovies(movieList) {
-  const container = document.getElementById('reviews');
-  if (!container) return;
-  container.innerHTML = movieList.map(movieCardTemplate).join('');
+  const html = movieList.map(movie => movieCardTemplate(movie)).join('');
+  reviewsContainer.innerHTML = html;
+  setupReadMoreButtons(); 
 }
+
+function setupReadMoreButtons() {
+  document.querySelectorAll('.read-more-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const fullDesc = btn.nextElementSibling;
+      fullDesc.classList.toggle('hidden');
+      btn.textContent = fullDesc.classList.contains('hidden') ? 'Read More' : 'Close';
+    });
+  });
+}
+
 
 function getAllTags() {
   const tagSet = new Set();
@@ -103,5 +119,6 @@ function init() {
     });
   }
 }
+
 
 init();
