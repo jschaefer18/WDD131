@@ -93,6 +93,7 @@ function renderFeaturedMovie() {
   const dune = movies.find(m => m.title === "Dune Part II");
   if (dune) {
     featuredContainer.innerHTML = movieCardTemplate(dune);
+    setupReadMoreButtons();
   }
 }
 
